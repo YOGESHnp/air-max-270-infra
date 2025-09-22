@@ -7,14 +7,19 @@ This repository provisions a scalable, multi-environment EKS setup on AWS using 
 ## 📁 Folder Structure
 
 air-max-270-infra/
-├── modules/ # Reusable modules (vpc, eks, iam)
+├── modules/ # Reusable modules
+│ ├── vpc/ # VPC provisioning logic
+│ ├── eks/ # EKS cluster logic
+│ ├── iam/ # IAM roles and OIDC setup
+│ └── ... # Add more modules as needed
 ├── env/ # Environment-specific variable files
-│ ├── dev.tfvars
-│ ├── staging.tfvars
-│ ├── prod.tfvars
+│ ├── dev.tfvars # Variables for dev cluster
+│ ├── staging.tfvars # Variables for staging cluster
+│ ├── prod.tfvars # Variables for prod cluster
 ├── main.tf # Central orchestration logic
 ├── variables.tf # Input variable definitions
 ├── backend.tf # Remote state configuration (S3 + DynamoDB)
+├── README.md # Project overview and usage guide
 
 ---
 
